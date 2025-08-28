@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Home{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  </head>
+
+  <body style="min-height: 100vh; display: flex; flex-direction: column;">
+    <div style="max-width: 1400px; width: 100%; margin: 0 auto; flex: 1 0 auto; display: flex; flex-direction: column;">
+      {% include 'partials/navbar.html' %}
+
+      <div class="container-fluid mt-4" style="flex: 1 0 auto; display: flex; flex-direction: column; width: 80%;">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+
+    {% include 'partials/footer.html' %}
+  </body>
+</html>
